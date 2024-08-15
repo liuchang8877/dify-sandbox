@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"io"
 	"os/exec"
-	"strings"
 	"sync"
 	"time"
 
@@ -137,11 +136,13 @@ func (s *OutputCaptureRunner) CaptureOutput(cmd *exec.Cmd) error {
 			s.WriteError([]byte(fmt.Sprintf("error: %v\n", err)))
 		} else if status.ExitCode() != 0 {
 			exit_string := status.String()
-			if strings.Contains(exit_string, "bad system call") {
-				s.WriteError([]byte("error: operation not permitted\n"))
-			} else {
-				s.WriteError([]byte(fmt.Sprintf("error: %v\n", exit_string)))
-			}
+
+			//私有化部署，可以请求网络
+			//if strings.Contains(exit_string, "bad system call") {
+			//	s.WriteError([]byte("error: operation not permitted\n"))
+			//} else {
+			//	s.WriteError([]byte(fmt.Sprintf("error: %v\n", exit_string)))
+			//}
 		}
 
 		// wait for the stdout and stderr to finish
