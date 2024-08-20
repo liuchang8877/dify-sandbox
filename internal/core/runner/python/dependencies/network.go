@@ -3,7 +3,8 @@ package dependencies
 func init() {
 	SetupDependency("httpx", "")
 	SetupDependency("requests", "")
-	SetupDependency("grpc", "")
+	SetupDependency("grpcio", "")
+	SetupDependency("grpcio-tools", "")
 	SetupDependency("time", "")
 
 }
