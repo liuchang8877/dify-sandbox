@@ -5,7 +5,7 @@ func init() {
 	SetupDependency("requests", "")
 	SetupDependency("grpcio", "")
 	SetupDependency("grpcio-tools", "")
-	SetupDependency("google", "")
+	SetupDependency("protobuf", "")
 
 	SetupDependency("time", "")
 
