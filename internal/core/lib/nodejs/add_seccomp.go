@@ -22,7 +22,7 @@ func InitSeccomp(uid int, gid int, enable_network bool) error {
 		return err
 	}
 
-	lib.SetNoNewPrivs()
+	//lib.SetNoNewPrivs()
 
 	allowed_syscalls := []int{}
 	allowed_not_kill_syscalls := []int{}

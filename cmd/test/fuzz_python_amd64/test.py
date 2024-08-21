@@ -13,8 +13,8 @@ def excepthook(type, value, tb):
 sys.excepthook = excepthook
 
 lib = ctypes.CDLL("/var/sandbox/sandbox-python/python.so")
-lib.DifySeccomp.argtypes = [ctypes.c_uint32, ctypes.c_uint32, ctypes.c_bool]
-lib.DifySeccomp.restype = None
+# lib.DifySeccomp.argtypes = [ctypes.c_uint32, ctypes.c_uint32, ctypes.c_bool]
+# lib.DifySeccomp.restype = None
 
 
 import json
@@ -27,7 +27,7 @@ import os
 
 os.chdir("/var/sandbox/sandbox-python")
 
-lib.DifySeccomp(65537, 1001, 1)
+# lib.DifySeccomp(65537, 1001, 1)
 
 # declare main function here
 def main() -> dict:
